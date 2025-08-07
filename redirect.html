@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>جارِ التحويل...</title>
+  <script>
+    window.onload = function () {
+      const now = new Date();
+      const dateTime = now.toISOString(); // التاريخ والوقت بتنسيق مفصل
+      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeU3uHSfQPzwXFiUNZoun9fE8nCSSw8XeMTDILjW1MUqpPbeg/viewform";
+      const fullUrl = `${formUrl}?entry.1726213050=${encodeURIComponent(dateTime)}`;
+      window.location.href = fullUrl;
+    };
+  </script>
+</head>
+<body>
+  <p>يُسجل وقت الدخول وتحويلك الآن...</p>
+</body>
+</html>
