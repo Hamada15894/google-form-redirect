@@ -2,18 +2,26 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <title>جارِ التحويل...</title>
-  <script>
-    window.onload = function () {
-      const now = new Date();
-      const dateTime = now.toISOString(); // التاريخ والوقت بتنسيق مفصل
-      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeU3uHSfQPzwXFiUNZoun9fE8nCSSw8XeMTDILjW1MUqpPbeg/viewform";
-      const fullUrl = `${formUrl}?entry.1726213050=${encodeURIComponent(dateTime)}`;
-      window.location.href = fullUrl;
-    };
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>جارٍ التحويل...</title>
 </head>
 <body>
-  <p>يُسجل وقت الدخول وتحويلك الآن...</p>
+  <h3>جارٍ التحويل إلى النموذج...</h3>
+  <script>
+    const now = new Date();
+    const formattedDate = now.toLocaleString('en-US', {
+      month: '2-digit',
+      day: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    });
+
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeU3uHSfQPzwXFiUNZoun9fE8nCSSw8XeMTDILjW1MUqpPbeg/viewform?usp=pp_url&entry.1726213050=";
+    
+    window.location.href = formUrl + encodeURIComponent(formattedDate);
+  </script>
 </body>
 </html>
+
